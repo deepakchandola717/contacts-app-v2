@@ -1,0 +1,29 @@
+.container{
+    width:80%;
+    display:grid;
+    grid-template-columns:1fr 6fr 1fr;
+    margin:0.5em;
+}
+.avatar{
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color:lightgreen;
+}
+.details{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color:yellow;
+}
+.name{
+    display:flex;
+    background-color: grey;
+}
+.actions{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color:lightgreen;
+}
