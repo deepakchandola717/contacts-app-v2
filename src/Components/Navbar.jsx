@@ -1,21 +1,42 @@
 import React, { Component } from "react";
+import AddContact from './AddContact'
+
 class Navbar extends Component {
-  state = {};
+  state = {
+    search:'',
+  };
+
+  // handleSearch=(event)=>{
+  //   this.setState({
+  //     search:event.target.value
+  //   })
+  //   this.props.onSearch(this.state.search)
+  //   console.log("updating in navbar.jsx", this.state.search)
+  // }
+
   render() {
     return (
       <>
-        <nav class="navbar navbar-light bg-light">
-          <a class="navbar-brand">Contacts</a>
-          <form class="form-inline">
+        <nav className="navbar navbar-light bg-light">
+          <a className="navbar-brand">ContactsApp</a>
+          <form className="form-inline">
             <input
-              class="form-control mr-sm-2"
+              className="form-control mr-sm-2"
               type="search"
               placeholder="Search"
               aria-label="Search"
+              // value= {this.state.search}
+              onChange={(event) => this.props.onSearch(event.target.value)}
+              // onChange={this.handleSearch}
             />
-            <button class="btn btn-outline-success my-2 my-sm-0" type="">
-              ADD NEW
-            </button>
+            <div className="btn-group">
+  <button type="button" className="btn btn-secondary dropdown-toggle" data-toggle="dropdown" data-target="#add-new-form" aria-haspopup="true" aria-expanded="false">
+    ADD New Contact
+  </button>
+  <AddContact onAdd={this.props.onAdd}/>
+</div>
+  
+            
           </form>
         </nav>
       </>
