@@ -28,7 +28,7 @@ class Contact extends Component {
           </div>
           <div className="actions">
             <div className="edit">
-            <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#anything" onClick={()=>this.props.currentStateFunction(this.props.contact)} >
+            <button type="button" className="btn btn-primary" data-toggle="modal" data-dismiss="modal" data-target="#anything" onClick={()=>this.props.currentStateFunction(this.props.contact)} >
                Edit     
             </button>
             </div>

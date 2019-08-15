@@ -3,29 +3,6 @@ import 'bootstrap/dist/css/bootstrap.css';
 import '../CSS/edit-contact.css'
 
 class EditContact extends React.Component {
-  constructor(props){
-    super();
-    this.state={
-      Contact:{
-        first_name:"",
-        last_name:"",
-        email:"",
-        phone:"",
-      }}
-    //   console.log("consoling ",props.contact)
-  }
-  
-  handleChange=(event)=>{
-    let newContact=Object.assign({}, this.props.contact)
-    const change=event.target.name
-    newContact[change]=event.target.value
-    this.setState({
-        Contact:newContact
-    })
-    console.log("handling change",newContact)
- }
-    
-     
     render() { 
     //   console.log("from props", this.props.contact.phone)
         // const {first_name, last_name, email, phone, id, avatar_url}=this.props.contact
@@ -48,7 +25,7 @@ class EditContact extends React.Component {
                     <label>FirstName</label>
                     </div>
                     <div>
-                    <input type="text" name="first_name" className="form-group col-lg-10 mx-5" defaultValue={this.props.contact.first_name} onChange={this.handleChange}></input>
+                    <input type="text" name="first_name" className="form-group col-lg-10 mx-5" defaultValue={this.props.contact.first_name} onChange={(event)=>this.props.onChangeEdit(event)}></input>
                     </div>
                     </div>
                     <div className="holder">
@@ -56,7 +33,7 @@ class EditContact extends React.Component {
                     <label>LastName</label>
                     </div>
                     <div>
-                    <input type="text" name="last_name" className="form-group col-lg-10 mx-5" defaultValue={this.props.contact.last_name} onChange={this.handleChange}></input>
+                    <input type="text" name="last_name" className="form-group col-lg-10 mx-5" defaultValue={this.props.contact.last_name} onChange={(event)=>this.props.onChangeEdit(event)}></input>
                     </div>
                     </div>
                     <div className="holder">
@@ -64,7 +41,7 @@ class EditContact extends React.Component {
                     <label>E-Mail</label>
                     </div>
                     <div>
-                    <input type="text" name="email" className="form-group col-lg-10 mx-5"defaultValue={this.props.contact.email} onChange={this.handleChange}></input>
+                    <input type="text" name="email" className="form-group col-lg-10 mx-5"defaultValue={this.props.contact.email} onChange={(event)=>this.props.onChangeEdit(event)}></input>
                     </div>
                     </div>
                     <div className="holder">
@@ -72,14 +49,14 @@ class EditContact extends React.Component {
                     <label>Phone</label>
                     </div>
                     <div>
-                    <input type="text" name="phone" className="form-group col-lg-10 mx-5"defaultValue={this.props.contact.phone} onChange={this.handleChange}></input>
+                    <input type="text" name="phone" className="form-group col-lg-10 mx-5"defaultValue={this.props.contact.phone} onChange={(event)=>this.props.onChangeEdit(event)}></input>
                     </div>
                     </div>
             </form>
                   </div>
                   <div className="modal-footer">
                     <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" className="btn btn-primary" data-dismiss="modal" onClick={()=>this.props.onEdit(this.state.Contact)}>Save changes</button>
+                    <button type="submit" className="btn btn-primary" data-dismiss="modal" onSubmit={this.props.onEdit}>Save changes</button>
                   </div>
                 </div>
               </div>

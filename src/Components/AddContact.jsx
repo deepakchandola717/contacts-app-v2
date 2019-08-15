@@ -28,7 +28,7 @@ class AddContact extends Component {
     render() { 
         return ( 
           <div className="dropdown-menu dropdown-menu-right" id="add-new-form">
-          <form className="px-4 py-3">
+          <form className="px-4 py-3" >
             <div className="form-group">
               <label for="exampleDropdownFormFirstName">First Name</label>
               <input type="text" name="first_name" className="form-control" id="exampleDropdownFormFirstName" placeholder="First Name" onChange={this.handleChange}/>
@@ -40,10 +40,10 @@ class AddContact extends Component {
               <input type="email" name="email" className="form-control" id="exampleDropdownFormEmail" placeholder="email@example.com" onChange={this.handleChange}/>
             </div>
             <div className="form-group">
-              <label for="exampleDropdownFormPassword1">Phone</label>
+              <label for="exampleDropdownFormPassword1">Phone</label>//
               <input type="number" name="phone" className="form-control" id="exampleDropdownFormPhone" placeholder="Phone" onChange={this.handleChange}/>
             </div>
-            <button type="button" className="btn btn-primary m-4" data-dismiss="modal" onClick={()=>this.props.onAdd(this.state.Contact)}>ADD CONTACT</button>
+            <button type="submitf" className="btn btn-primary m-4" data-dismiss="modal" onClick={()=>this.props.onAdd(this.state.Contact)}>ADD CONTACT</button>
           </form>
           </div>
          );
